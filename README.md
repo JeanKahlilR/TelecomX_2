@@ -59,26 +59,46 @@ O conjunto de dados esta no repositorio no formato csv, separador padrão e com 
 * `total_servicos`: total de serviços contratados
 
 ## 🚀 Como Executar
-
-### 📌 Opção 1: Google Colab 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/seu-usuario/telecom-churn-analysis/blob/main/analise_churn.ipynb)
-
-1. Clique no botão **"Open in Colab"** acima
-2. Faça login com sua conta Google
-3. Clique em **"Runtime" > "Run all"** para executar todo o notebook
-4. Para salvar suas alterações:
-   - **File > Save a copy in Drive**
-
-### 💻 Opção 2: Execução Local
+Este projeto pode ser executado de duas formas: diretamente no seu navegador usando o Google Colab ou localmente na sua máquina. Escolha a opção mais conveniente para você.
 
 #### Pré-requisitos
-- Python 3.8+
-- Jupyter Notebook
 
-#### Passo a passo:
+- Para Google Colab: Apenas uma conta Google (Gmail).
+- Para Execução Local:
+  * Python 3.8+
+  * Jupyter Notebook
+  * `pip` (gerenciador de pacotes do Python)
+  * `virtualenv` (recomendado, para criar um ambiente virtual)
+
+#### ▶️ Opção 1: Executar no Google Colab (Recomendado para Testes Rápidos)
+Esta é a maneira mais fácil de executar o projeto sem precisar instalar nada na sua máquina.
+
+1. Acesse o Notebook no Colab:
+Clique no botão abaixo para abrir uma cópia do notebook no Google Colab.
+https://colab.research.google.com/assets/colab-badge.svg
+2. Faça uma cópia no seu Drive:
+No Colab, vá em Arquivo -> Salvar uma cópia no Drive. Isto criará uma cópia editável do notebook na sua conta pessoal.
+3.Faça o upload do modelo treinado:
+O notebook precisa do arquivo Modelo_Detecção_de_Churn.pkl para fazer as previsões. No notebook do Colab, localize a célula que carrega o modelo (deve conter um código como pickle.load(open('Modelo_Detecção_de_Churn.pkl', 'rb'))).
+   * Clique no ícone de pasta 📁 no menu lateral esquerdo do Colab.
+   * Arraste o arquivo Modelo_Detecção_de_Churn.pkl do seu computador para a área de upload do Colab.
+   * Verifique o caminho do arquivo: Após o upload, clique com o botão direito no arquivo na janela lateral, selecione "Copiar caminho" e cole-o no código do notebook, substituindo o nome do arquivo atual. Por exemplo:
+     ```python
+     # Substitua esta linha:
+     model = pickle.load(open('Modelo_Detecção_de_Churn.pkl', 'rb'))
+
+     # Por algo assim (o caminho exato pode variar):
+     model = pickle.load(open('/content/Modelo_Detecção_de_Churn.pkl', 'rb'))
+     ```
+4 .Execute as células:
+Vá em Runtime -> Run all para executar todo o notebook do início ao fim. Aguarde a execução de todas as células.
+
+#### 💻 Opção 2: Execução Local
 1. Clique em "Code" > "Download ZIP" no GitHub
 2. Extraia o arquivo ZIP em sua máquina
 3. Na pasta em que foi extraido o arquivo, clique com botão direito e em `Abrir no Terminal`
 4. No Terminal digite: `jupyter notebook`
-5. Clique no arquivo `Analise_Churn_TeleconX.ipynb`
+5. Clique no arquivo `TelecomX_2.ipynb`
 6. Clique em **"Runtime" > "Run all"** para executar todo o notebook
+
+ 
